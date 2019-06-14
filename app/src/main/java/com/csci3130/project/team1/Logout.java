@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
+/**This class can let the user logout
+  * @Yuqiao Du, Longhao Gao
+  */
 public class Logout extends AppCompatActivity{
     private Button logout;
 
@@ -18,6 +20,7 @@ public class Logout extends AppCompatActivity{
         logout=findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
+            //logout and send a message if logout successfully
             public void onClick(View v) {
                 Intent intent = new Intent(Logout.this, MainActivity.class);
                 startActivity(intent);
