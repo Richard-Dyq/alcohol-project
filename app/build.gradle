@@ -27,6 +27,23 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.firebase:firebase-core:16.0.9'
+
+    //reference from: https://medium.com/@pranitsawant01/ui-testing-with-espresso-introduction-28cc41c23b36
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
+
+// Espresso dependencies
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-accessibility:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-web:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
+
+// The following Espresso dependency can be either "compile"
+// or "androidTestImplementation", depending on your app's implementation
+    androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
