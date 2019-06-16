@@ -20,7 +20,13 @@ import java.util.Map;
 public class Upload extends AppCompatActivity {
     FirebaseFirestore database = FirebaseFirestore.getInstance();
 
-
+    /**
+     * author Ganrong Tan & Jiutian Zhang
+     * @param uid userId for specific data node
+     * @param c_level cannabis daily intake level
+     * @param date upload day
+     * date Sun June 16 2019
+     */
     public void uploadData(final String uid, final double c_level, Date date) {
         final DocumentReference ref = database.collection("users").document(uid);
         Map<String, Object> inputData = new HashMap<>();

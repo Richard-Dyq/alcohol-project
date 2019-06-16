@@ -1,3 +1,7 @@
+/**
+ * author Ganrong Tan & Jiutian Zhang
+ * date Sun June 16 2019
+ */
 package com.csci3130.project.team1;
 
 import android.support.v7.app.AppCompatActivity;
