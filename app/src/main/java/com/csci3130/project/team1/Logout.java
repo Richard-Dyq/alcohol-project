@@ -22,10 +22,10 @@ public class Logout extends AppCompatActivity{
             @Override
             //logout and send a message if logout successfully
             public void onClick(View v) {
-                Intent intent = new Intent(Logout.this, MainActivity.class);
+                Intent intent = new Intent(Logout.this, MockLogin.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(Logout.this, "Successfully logout", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Logout.this, "Successfully Logout", Toast.LENGTH_SHORT).show();
             }
         });
 

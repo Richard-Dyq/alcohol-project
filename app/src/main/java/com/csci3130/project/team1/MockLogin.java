@@ -9,7 +9,7 @@ import android.widget.Button;
 /**This class can let the user login
  * @Yuqiao Du, Longhao Gao
  */
-public class MainActivity extends AppCompatActivity {
+public class MockLogin extends AppCompatActivity {
 
     private Button login;
     @Override
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Logout.class);
+                Intent intent = new Intent(MockLogin.this, Logout.class);
                 startActivity(intent);
             }
         });
