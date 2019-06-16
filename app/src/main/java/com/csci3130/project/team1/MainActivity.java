@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
+         * A button "Enter" links to the intake input page (ECL_active)
+         */
         Button ecl_button = (Button) this.findViewById(R.id.ecl_button);
 
         ecl_button.setOnClickListener(new View.OnClickListener(){

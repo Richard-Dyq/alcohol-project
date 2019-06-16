@@ -24,6 +24,15 @@ public class ECL_Test {
     public ActivityTestRule<MainActivity> activityRule
             = new ActivityTestRule<>(MainActivity.class);
 
+    /**
+     * Enter in a input number (based on each test)as the cannabis intake,
+     * then press Button SUBMIT;
+     * check the return message
+     * based on th following rules:
+     * 0-20 -> safe, 20-40 -> moderate, 40-60 -> excess, 60-80 -> danger
+     * 80+ -> very danger
+     */
+
     @Test
     public void test1() {
         onView(withId(R.id.ecl_button)).perform(click());

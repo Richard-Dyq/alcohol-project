@@ -18,6 +18,15 @@ public class ECL_Activity extends AppCompatActivity {
         input = (EditText) findViewById(R.id.inputLevel);
         button = (Button) findViewById(R.id.button_sub);
         output = (TextView) findViewById(R.id.message);
+
+        /**
+         * Read in a input number (must bigger than 0)as the cannabis intake,
+         * then based on the value returns a message that inform
+         * user if his/her intake is too much.
+         * 0-20 -> safe, 20-40 -> moderate, 40-60 -> excess, 60-80 -> danger
+         * 80+ -> very danger
+         */
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
