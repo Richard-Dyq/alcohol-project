@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Logout"> </activity>
-
         <uses-library android:name="android.test.runner" />
+        <activity android:name=".ECL_Activity"></activity>
     </application>
 
 

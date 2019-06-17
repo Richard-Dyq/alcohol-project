@@ -13,12 +13,36 @@ import com.google.firebase.auth.FirebaseAuth;
   */
 public class Logout extends AppCompatActivity{
     private Button logout;
+    Button ecl_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.logout);
+        setupUI();
+    }
 
+
+    private void setupUI(){
+        setUpCannabiesButton();
+        setUpLogoutButton();
+    }
+
+    /**
+     * A submitButton "Enter" links to the intake input page (ECL_active)
+     */
+    private void setUpCannabiesButton(){
+        ecl_button = (Button) this.findViewById(R.id.ecl_button);
+
+        ecl_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(Logout.this, ECL_Activity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpLogoutButton(){
         logout=findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +53,8 @@ public class Logout extends AppCompatActivity{
                 Toast.makeText(Logout.this, "Successfully Logout", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
+
+
 }
 
