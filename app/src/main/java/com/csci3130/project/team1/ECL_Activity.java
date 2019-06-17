@@ -6,11 +6,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class ECL_Activity extends AppCompatActivity {
     EditText input;
     Button submitButton;
     Button backBuuton;
     TextView output;
+    FirebaseFirestore database;
+    private FirebaseAuth mAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +33,33 @@ public class ECL_Activity extends AppCompatActivity {
         submitButton = (Button) findViewById(R.id.button_sub);
         backBuuton = findViewById(R.id.back);
         output = (TextView) findViewById(R.id.message);
+        database = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
+        setupUI();
+
+    }
+    /**
+     * author Ganrong Tan & Jiutian Zhang
+     * @param uid userId for specific data node
+     * @param c_level cannabis daily intake level
+     * @param date upload day
+     * date Sun June 16 2019
+     */
+    public void uploadData(final String uid, final double c_level, Date date) {
+        final DocumentReference ref = database
+                .collection("users")
+                .document(uid)
+                .collection("cannabis")
+                .document();
+        Map<String, Object> inputData = new HashMap<>();
+        inputData.put("c_level", c_level);
+        inputData.put("date", date);
+        ref.set(inputData);
+    }
+
+
+    private void setupUI(){
         /**
          * Read in a input number (must bigger than 0)as the cannabis intake,
          * then based on the value returns a message that inform
@@ -47,6 +86,11 @@ public class ECL_Activity extends AppCompatActivity {
                     output.setText("Please input a positive number");
                 else
                     output.setText("Please input a number of your intake");
+
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                String uid = currentUser.getUid();
+                uploadData(uid, intake, new Date());
             }
         });
 
@@ -56,6 +100,5 @@ public class ECL_Activity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }
