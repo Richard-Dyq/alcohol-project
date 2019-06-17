@@ -8,6 +8,9 @@ import static org.junit.Assert.assertTrue;
 
 public class LoginUnitTest {
     @Test
+    /**
+     * JUnit test for user name and password validation.
+     */
     public void isUserNameAndPasswordValid_iscorrect() {
         LoginActivity loginActivity = new LoginActivity();
 

@@ -1,3 +1,6 @@
+/**
+ * Authors: James He, Zixuan Liu
+ */
 package com.csci3130.project.team1;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -18,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //attributes for connecting view and activity
     FirebaseFirestore database;
     Button loginButton;
     EditText emailEdit;
@@ -25,10 +29,14 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
+    /**
+     *
+     * @param user Firebase Autu user, passed by after login successful
+     */
     public void updateUI(FirebaseUser user){
         if (user == null)
             return;
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, Logout.class);
         startActivity(intent);
     }
 
@@ -36,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login);
+        //assign reference
         mAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
         loginButton = findViewById(R.id.cirLoginButton);
@@ -58,10 +67,21 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Check if user name and password are valid
+     * @param email
+     * @param passWd
+     * @return
+     */
     public boolean isUserNameAndPasswordValid(String email, String passWd){
         return email.contains("@") && passWd.length()>2;
     }
 
+    /**
+     * Login in with email and password.
+     * @param email
+     * @param password
+     */
     public void login(String email, String password){
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
