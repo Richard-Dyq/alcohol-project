@@ -11,9 +11,11 @@ import com.google.firebase.auth.FirebaseAuth;
 /**This class can let the user logout
   * @Yuqiao Du, Longhao Gao
   */
-public class Logout extends AppCompatActivity{
+public class HomeActivity extends AppCompatActivity{
     private Button logout;
-    Button ecl_button;
+    private Button ecl_button;
+    private Button cannanisRecordOrderByDate;
+    private Button cannanisRecordOrderByLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,30 @@ public class Logout extends AppCompatActivity{
     private void setupUI(){
         setUpCannabiesButton();
         setUpLogoutButton();
+        setUpCannabiesRecordOrderByDate();
+        setUpCannabiesRecordOrderByLevel();
+    }
+
+    private void setUpCannabiesRecordOrderByDate(){
+        cannanisRecordOrderByDate = (Button) this.findViewById(R.id.cannais_ordered_by_date);
+        cannanisRecordOrderByDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, CannabisDateOrderedListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpCannabiesRecordOrderByLevel(){
+        cannanisRecordOrderByLevel = (Button) this.findViewById(R.id.cannais_ordered_by_level);
+        cannanisRecordOrderByLevel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, CannabisLevelOrderedListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
@@ -36,7 +62,7 @@ public class Logout extends AppCompatActivity{
 
         ecl_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Logout.this, ECL_Activity.class);
+                Intent intent = new Intent(HomeActivity.this, ECL_Activity.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +76,7 @@ public class Logout extends AppCompatActivity{
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 finish();
-                Toast.makeText(Logout.this, "Successfully Logout", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "Successfully HomeActivity", Toast.LENGTH_SHORT).show();
             }
         });
     }
