@@ -18,7 +18,7 @@ import java.util.Map;
 public class ECL_Activity extends AppCompatActivity {
     EditText input;
     Button submitButton;
-    Button backBuuton;
+    Button backButton;
     TextView output;
     FirebaseFirestore database;
     private FirebaseAuth mAuth;
@@ -31,7 +31,7 @@ public class ECL_Activity extends AppCompatActivity {
 
         input = (EditText) findViewById(R.id.inputLevel);
         submitButton = (Button) findViewById(R.id.button_sub);
-        backBuuton = findViewById(R.id.back);
+        backButton = findViewById(R.id.back);
         output = (TextView) findViewById(R.id.message);
         database = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -94,7 +94,7 @@ public class ECL_Activity extends AppCompatActivity {
             }
         });
 
-        backBuuton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

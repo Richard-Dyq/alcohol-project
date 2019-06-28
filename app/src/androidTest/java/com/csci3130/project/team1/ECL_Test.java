@@ -21,8 +21,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class ECL_Test {
     @Rule
-    public ActivityTestRule<MainActivity> activityRule
-            = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<ECL_Activity> activityRule
+            = new ActivityTestRule<>(ECL_Activity.class);
 
     /**
      * Enter in a input number (based on each test)as the cannabis intake,
