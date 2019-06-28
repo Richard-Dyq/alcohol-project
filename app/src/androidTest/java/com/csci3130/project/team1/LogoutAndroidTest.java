@@ -25,8 +25,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class LogoutAndroidTest {
     @Rule
-    public ActivityTestRule<MockLogin> activityRule
-            = new ActivityTestRule<>(MockLogin.class);
+    public ActivityTestRule<HomeActivity> activityRule
+            = new ActivityTestRule<>(HomeActivity.class);
     @Test
     public void useAppContext() {
         // Context of the app under test.
@@ -41,9 +41,9 @@ public class LogoutAndroidTest {
     @Test
     public void logoutTest() {
 
-        onView(withId(R.id.login)).perform(click());
         onView(withId(R.id.logout)).perform(click());
-        onView(withId(R.id.login)).check(matches(withText("login")));
+        onView(withId(R.id.logout)).perform(click());
+        onView(withId(R.id.logout)).check(matches(withText("login")));
 
     }
 }

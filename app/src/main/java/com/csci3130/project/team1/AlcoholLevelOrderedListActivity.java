@@ -1,7 +1,7 @@
 package com.csci3130.project.team1;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +14,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-
-public class AlcoholDateOrderedListActivity extends AppCompatActivity {
+public class AlcoholLevelOrderedListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
@@ -49,7 +48,7 @@ public class AlcoholDateOrderedListActivity extends AppCompatActivity {
     {
 
         String uid = "FasbrbwjDDYvjGDzQ9cRZB88Aqn2";
-        Query query = db.collection("users").document(uid).collection("alcohol").orderBy("date").limit(50);
+        Query query = db.collection("users").document(uid).collection("alcohol").orderBy("a_level").limit(50);
         FirestoreRecyclerOptions<AlcoholIntake> options = new FirestoreRecyclerOptions.Builder<AlcoholIntake>()
                 .setQuery(query, AlcoholIntake.class)
                 .build();

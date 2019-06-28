@@ -6,21 +6,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/ecl_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ENTER"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="274dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="516dp"
-        android:text="log out"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/ecl_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cannabis ENTER"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <Button
+            android:id="@+id/alcohol_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcohol ENTER"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <Button
+            android:id="@+id/cannais_ordered_by_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cannabis Records Ordered By Date"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+        <Button
+            android:id="@+id/cannais_ordered_by_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cannabis Records Ordered By Level"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <Button
+            android:id="@+id/alcohol_ordered_by_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcohol Records Ordered By Date"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+        <Button
+            android:id="@+id/alcohol_ordered_by_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcohol Records Ordered By Level"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="log out"/>
+
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
