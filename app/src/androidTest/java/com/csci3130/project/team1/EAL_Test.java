@@ -25,6 +25,7 @@ public class EAL_Test {
             = new ActivityTestRule<>(EAL_Activity.class);
 
     /**
+     * @author: Yuanyuan Deng & Longhao Gao
      * Enter in a input number (based on each test)as the alcohol intake,
      * then press Button SUBMIT;
      * check the return message

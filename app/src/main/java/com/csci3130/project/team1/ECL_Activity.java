@@ -58,34 +58,19 @@ public class ECL_Activity extends AppCompatActivity {
         ref.set(inputData);
     }
 
+    /**
+     * @author: Yuanyuan Deng & Zihao Liu
+     * Read in a input number (must bigger than 0)as the cannabis intake,
+     * then based on the value returns a message that inform
+     * user if his/her intake is too much.
+     */
 
     private void setupUI(){
-        /**
-         * Read in a input number (must bigger than 0)as the cannabis intake,
-         * then based on the value returns a message that inform
-         * user if his/her intake is too much.
-         * 0-20 -> safe, 20-40 -> moderate, 40-60 -> excess, 60-80 -> danger
-         * 80+ -> very danger
-         */
-
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 double intake = Double.valueOf(input.getText().toString());
-                if (intake > 80)
-                    output.setText("Your intake is very danger\nplease consider emergency measures");
-                else if (intake > 60 && intake <= 80)
-                    output.setText("Your intake is danger");
-                else if (intake > 40 && intake <= 60)
-                    output.setText("Your intake is excess");
-                else if (intake > 20 && intake <= 40)
-                    output.setText("Your intake is moderate");
-                else if (intake > 0 && intake <= 20)
-                    output.setText("Your intake is safe");
-                else if (intake <= 0)
-                    output.setText("Please input a positive number");
-                else
-                    output.setText("Please input a number of your intake");
+                intakeChecker(intake);
 
                 FirebaseUser currentUser = mAuth.getCurrentUser();
 
@@ -101,4 +86,29 @@ public class ECL_Activity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * function that returns a message that inform user if intake is too much.
+     * @param intake: intake value of alcohol
+     * 0-20 -> safe, 20-40 -> moderate, 40-60 -> excess, 60-80 -> danger
+     * * 80+ -> very danger
+     */
+    public void intakeChecker(double intake){
+        if (intake > 80)
+            output.setText("Your intake is very danger\nplease consider emergency measures");
+        else if (intake > 60 && intake <= 80)
+            output.setText("Your intake is danger");
+        else if (intake > 40 && intake <= 60)
+            output.setText("Your intake is excess");
+        else if (intake > 20 && intake <= 40)
+            output.setText("Your intake is moderate");
+        else if (intake > 0 && intake <= 20)
+            output.setText("Your intake is safe");
+        else if (intake <= 0)
+            output.setText("Please input a positive number");
+        else
+            output.setText("Please input a number of your intake");
+    }
+
+
 }

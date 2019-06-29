@@ -25,6 +25,7 @@ public class ECL_Test {
             = new ActivityTestRule<>(ECL_Activity.class);
 
     /**
+     * @author: Yuanyuan Deng & Zihao Liu
      * Enter in a input number (based on each test)as the cannabis intake,
      * then press Button SUBMIT;
      * check the return message
