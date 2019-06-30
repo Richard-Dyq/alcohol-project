@@ -1,3 +1,8 @@
+/**
+ * @Author: Ganrong Tan & Zixuan Liu
+ * @Date: 30 June, 2019
+ */
+
 package com.csci3130.project.team1;
 
 import android.os.Bundle;
@@ -14,7 +19,6 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-
 public class AlcoholDateOrderedListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -22,6 +26,10 @@ public class AlcoholDateOrderedListActivity extends AppCompatActivity {
     private FirebaseFirestore database;
     private FirestoreRecyclerAdapter adapter;
 
+    /**
+     * @Author: Ganrong Tan & Zixuan Liu
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +43,11 @@ public class AlcoholDateOrderedListActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * @Author: Ganrong Tan & Zixuan Liu
+     * @param rv
+     * @param adapter
+     */
     private void setUpRecyclerView(RecyclerView rv, FirestoreRecyclerAdapter adapter)
     {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -44,7 +56,11 @@ public class AlcoholDateOrderedListActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
     }
 
-
+    /**
+     * @Author: Ganrong Tan & Zixuan Liu
+     * @param db
+     * @return adaptor
+     */
     private FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db)
     {
 
@@ -79,7 +95,10 @@ public class AlcoholDateOrderedListActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     *
+     * @Author: Ganrong Tan & Zixuan Liu
+     */
     @Override
     protected void onStart() {
         super.onStart();

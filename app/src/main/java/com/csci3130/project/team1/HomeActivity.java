@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-/**This class can let the user logout
+/**
   * @Yuqiao Du, Longhao Gao
   */
 public class HomeActivity extends AppCompatActivity{

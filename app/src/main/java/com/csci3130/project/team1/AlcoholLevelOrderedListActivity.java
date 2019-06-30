@@ -1,3 +1,8 @@
+/**
+ * @Author: Ganrong Tan & Zixuan Liu
+ * @Date: 30 June, 2019
+ */
+
 package com.csci3130.project.team1;
 
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +19,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+
 public class AlcoholLevelOrderedListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -21,6 +27,11 @@ public class AlcoholLevelOrderedListActivity extends AppCompatActivity {
     private FirebaseFirestore database;
     private FirestoreRecyclerAdapter adapter;
 
+    /**
+     *
+     * @Author: Ganrong Tan & Zixuan Liu
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +46,11 @@ public class AlcoholLevelOrderedListActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * @Author: Ganrong Tan & Zixuan Liu
+     * @param rv
+     * @param adapter
+     */
     private void setUpRecyclerView(RecyclerView rv, FirestoreRecyclerAdapter adapter)
     {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -43,7 +59,11 @@ public class AlcoholLevelOrderedListActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
     }
 
-
+    /**
+     * @Author: Ganrong Tan & Zixuan Liu
+     * @param db
+     * @return
+     */
     private FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db)
     {
 
