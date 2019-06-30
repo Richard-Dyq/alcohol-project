@@ -24,6 +24,9 @@ public class HomeActivity extends AppCompatActivity{
         setupUI();
     }
 
+    /**
+     * set up the ui
+     */
 
     private void setupUI(){
         setUpCannabiesButton();
@@ -32,6 +35,9 @@ public class HomeActivity extends AppCompatActivity{
         setUpCannabiesRecordOrderByLevel();
     }
 
+    /**
+     * set up the Cannabies order by date
+     */
     private void setUpCannabiesRecordOrderByDate(){
         cannanisRecordOrderByDate = (Button) this.findViewById(R.id.cannais_ordered_by_date);
         cannanisRecordOrderByDate.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +48,9 @@ public class HomeActivity extends AppCompatActivity{
             }
         });
     }
-
+    /**
+     * set up the Cannabies order by Level
+     */
     private void setUpCannabiesRecordOrderByLevel(){
         cannanisRecordOrderByLevel = (Button) this.findViewById(R.id.cannais_ordered_by_level);
         cannanisRecordOrderByLevel.setOnClickListener(new View.OnClickListener() {

@@ -8,6 +8,10 @@ public class CannabisIntakeViewHolder extends RecyclerView.ViewHolder  {
     public TextView level;
     public TextView date;
 
+    /**
+     * set up the ViewHolder
+     * @param view View object
+     */
     public CannabisIntakeViewHolder(View view)
     {
         super(view);

@@ -38,7 +38,11 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * the method to set up the RecyclerView
+     * @param rv RecyclerView
+     * @param adapter FirestoreRecyclerAdapter
+     */
     private void setUpRecyclerView(RecyclerView rv, FirestoreRecyclerAdapter adapter)
     {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -47,6 +51,10 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
     }
 
+    /**
+     * to get the user's id
+     * @return user id
+     */
     public String getUid(){
         String uid = "";
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -55,6 +63,11 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
         return uid;
     }
 
+    /**
+     * to show all the cannabis level and date
+     * @param db Firebase database
+     * @return FirestoreRecyclerAdapter
+     */
     public FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
@@ -88,13 +101,17 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
         return adapter;
     }
 
-
+    /**
+     * start listener
+     */
     @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
     }
-
+    /**
+     * stop listener
+     */
     @Override
     protected void onStop() {
         super.onStop();
