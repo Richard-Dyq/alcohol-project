@@ -1,3 +1,6 @@
+/**
+ * @Author: Yizhao He & Jiutian Zhang
+ */
 package com.csci3130.project.team1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
