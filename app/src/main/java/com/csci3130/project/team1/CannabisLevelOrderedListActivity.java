@@ -18,6 +18,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+/*
+This class give the Cannbis list sorted by level
+@Yuqiao Du & Zihao Liu
+ */
 public class CannabisLevelOrderedListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -38,7 +42,12 @@ public class CannabisLevelOrderedListActivity extends AppCompatActivity {
 
     }
 
-
+/*
+    this method creates a recycler list to display the cannabis
+    @param recyclerview
+    @param FirestoreRecyclerAdapte adapter
+    @retuen void
+ */
     private void setUpRecyclerView(RecyclerView rv, FirestoreRecyclerAdapter adapter)
     {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -46,7 +55,10 @@ public class CannabisLevelOrderedListActivity extends AppCompatActivity {
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(adapter);
     }
-
+    /*
+        this method gets uid
+        @retuen String
+     */
     public String getUid(){
         String uid = "";
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -54,7 +66,11 @@ public class CannabisLevelOrderedListActivity extends AppCompatActivity {
             uid = user.getUid();
         return uid;
     }
-
+    /*
+        this method creates a recycler list to display the cannabis
+        @param FirebaseFirestore
+        @retuen adapter
+     */
     public FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
