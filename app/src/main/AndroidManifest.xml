@@ -11,46 +11,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" android:label="Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" android:label="Home"></activity>
 
         <uses-library android:name="android.test.runner" />
 
-        <activity android:name=".ECL_Activity">
+        <activity android:name=".ECL_Activity" android:label="Cannabis Submission">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".EAL_Activity">
+        <activity android:name=".EAL_Activity" android:label="Alcohol Submission">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
 
-        <activity android:name=".CannabisDateOrderedListActivity">
+        <activity android:name=".CannabisDateOrderedListActivity" android:label="Cannabis Records Ordered By Date">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/>
         </activity>
 
-        <activity android:name=".CannabisLevelOrderedListActivity">
+        <activity android:name=".CannabisLevelOrderedListActivity" android:label="Cannabis Records Ordered By Level">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/>
         </activity>
 
-        <activity android:name=".AlcoholDateOrderedListActivity">
+        <activity android:name=".AlcoholDateOrderedListActivity" android:label="Alcohol Records Ordered By Date">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/>
         </activity>
 
-        <activity android:name=".AlcoholLevelOrderedListActivity">
+        <activity android:name=".AlcoholLevelOrderedListActivity" android:label="Alcohol Records Ordered By Level">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/>
         </activity>
