@@ -1,11 +1,13 @@
 /**
  * @Author: Yizhao He & Jiutian Zhang
  */
-package com.csci3130.project.team1;
+package com.csci3130.project.team1.viewHolder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.csci3130.project.team1.R;
 
 public class CannabisIntakeViewHolder extends RecyclerView.ViewHolder  {
     public TextView level;

@@ -1,7 +1,7 @@
 /**
  * @Author: Yizhao He & Jiutian Zhang
  */
-package com.csci3130.project.team1;
+package com.csci3130.project.team1.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

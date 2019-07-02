@@ -1,15 +1,10 @@
 package com.csci3130.project.team1;
 
-import android.os.Bundle;
-
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.csci3130.project.team1.model.CannabisIntake;
 
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
