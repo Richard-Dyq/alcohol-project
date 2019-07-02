@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity{
     private Button ecl_button;
     private Button alcohol_button;
     private Button cannanisRecordOrderByDate;
+    private Button cannanisRecordOrderByLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity{
         setUpAlcoholButton();
         setUpLogoutButton();
         setUpCannabiesRecordOrderByDate();
+        setUpCannabiesRecordOrderByLevel();
     }
 
     private void setUpCannabiesRecordOrderByDate(){
@@ -43,6 +45,16 @@ public class HomeActivity extends AppCompatActivity{
         });
     }
 
+    private void setUpCannabiesRecordOrderByLevel(){
+        cannanisRecordOrderByLevel = (Button) this.findViewById(R.id.cannais_ordered_by_level);
+        cannanisRecordOrderByLevel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, CannabisLevelOrderedListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
 
     /**

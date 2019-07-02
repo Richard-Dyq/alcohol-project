@@ -31,5 +31,4 @@ public class CannabisModelRepresentationTest {
         CannabisIntake cannabisIntake = new CannabisIntake(12, new Date());
         assertTrue(cannabisIntake.getDate_literal().matches("\\d{4}-\\d{2}-\\d{2}"));
     }
-
 }
