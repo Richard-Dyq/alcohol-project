@@ -36,7 +36,7 @@ public class LogoutAndroidTest {
     }
 
     /**
-     * This method tests if the logout function is correct
+     * This method tests if the activity_home function is correct
      */
     @Test
     public void logoutTest() {

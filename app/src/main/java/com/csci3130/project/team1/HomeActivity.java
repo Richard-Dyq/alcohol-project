@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.logout);
+        setContentView(R.layout.activity_home);
         setupUI();
     }
 
@@ -115,7 +115,7 @@ public class HomeActivity extends AppCompatActivity{
         logout=findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
-            //logout and send a message if logout successfully
+            //activity_home and send a message if activity_home successfully
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 finish();
