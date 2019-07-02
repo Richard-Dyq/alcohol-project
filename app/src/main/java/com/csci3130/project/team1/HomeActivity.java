@@ -8,15 +8,18 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-/**This class can let the user logout
+/**
   * @Yuqiao Du, Longhao Gao
   */
 public class HomeActivity extends AppCompatActivity{
     private Button logout;
     private Button ecl_button;
-    private Button alcohol_button;
-    private Button cannanisRecordOrderByDate;
+    private Button eal_button;
+    private Button alcoholRecordOrderByLevel;
+    private Button alcoholRecordOrderByDate;
     private Button cannanisRecordOrderByLevel;
+    private Button cannanisRecordOrderByDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +30,38 @@ public class HomeActivity extends AppCompatActivity{
 
 
     private void setupUI(){
-        setUpCannabiesButton();
         setUpAlcoholButton();
+        setUpCannabiesButton();
         setUpLogoutButton();
         setUpCannabiesRecordOrderByDate();
         setUpCannabiesRecordOrderByLevel();
+        setUpAlcoholRecordOrderByLevel();
+        setUpAlcoholRecordOrderByDate();
     }
+
+    private void setUpAlcoholRecordOrderByLevel(){
+        alcoholRecordOrderByLevel = (Button) this.findViewById(R.id.alcohol_ordered_by_level);
+        alcoholRecordOrderByLevel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AlcoholLevelOrderedListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    private void setUpAlcoholRecordOrderByDate(){
+        alcoholRecordOrderByDate = (Button) this.findViewById(R.id.alcohol_ordered_by_date);
+        alcoholRecordOrderByDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AlcoholDateOrderedListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     private void setUpCannabiesRecordOrderByDate(){
         cannanisRecordOrderByDate = (Button) this.findViewById(R.id.cannais_ordered_by_date);
@@ -56,7 +85,6 @@ public class HomeActivity extends AppCompatActivity{
         });
     }
 
-
     /**
      * A submitButton "Enter" links to the intake input page (ECL_active)
      */
@@ -71,10 +99,11 @@ public class HomeActivity extends AppCompatActivity{
         });
     }
 
-    private void setUpAlcoholButton(){
-        alcohol_button = (Button) this.findViewById(R.id.alcohol_button);
 
-        alcohol_button.setOnClickListener(new View.OnClickListener(){
+    private void setUpAlcoholButton(){
+        eal_button = (Button) this.findViewById(R.id.alcohol_button);
+
+        eal_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, EAL_Activity.class);
                 startActivity(intent);

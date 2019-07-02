@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class CannabisModelRepresentationTest {
+public class DataModelRepresentationTest {
     @Test
     public void getCannaisLevelRep_isCorrect() {
         CannabisIntake cannabisIntake = new CannabisIntake(12, new Date());
