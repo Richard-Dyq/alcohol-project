@@ -1,5 +1,7 @@
+/**
+ * @Author: Yizhao He & Jiutian Zhang
+ */
 package com.csci3130.project.team1;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.widget.Button;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -36,7 +40,11 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * the method to set up the RecyclerView
+     * @param rv RecyclerView
+     * @param adapter FirestoreRecyclerAdapter
+     */
     private void setUpRecyclerView(RecyclerView rv, FirestoreRecyclerAdapter adapter)
     {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -46,10 +54,29 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
     }
 
 
-    private FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db)
-    {
 
-        String uid = "FasbrbwjDDYvjGDzQ9cRZB88Aqn2";
+    /**
+     * to get the user's id
+     * @return user id
+     */
+    public String getUid(){
+        String uid = "";
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null)
+            uid = user.getUid();
+        return uid;
+    }
+
+    /**
+     * to show all the cannabis level and date
+     * @param db Firebase database
+     * @return FirestoreRecyclerAdapter
+     */
+    public FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
+        String uid = user.getUid();
+
         Query query = db.collection("users").document(uid).collection("cannabis").orderBy("date").limit(50);
         FirestoreRecyclerOptions<CannabisIntake> options = new FirestoreRecyclerOptions.Builder<CannabisIntake>()
                 .setQuery(query,CannabisIntake.class)
@@ -62,8 +89,8 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
             public void onBindViewHolder(CannabisIntakeViewHolder holder, int position, final CannabisIntake model)
             {
                 System.out.println(model);
-                holder.level.setText(model.getC_level() + "");
-                holder.date.setText(model.getDate() + "");
+                holder.level.setText(model.getC_level_Literal());
+                holder.date.setText(model.getDate_literal());
             }
 
             @Override
@@ -81,12 +108,19 @@ public class CannabisDateOrderedListActivity extends AppCompatActivity {
     }
 
 
+
+    /**
+     * start listener
+     */
     @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
     }
 
+    /**
+     * stop listener
+     */
     @Override
     protected void onStop() {
         super.onStop();
