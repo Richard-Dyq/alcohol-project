@@ -18,7 +18,7 @@ before_script:
   - set +o pipefail
   - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
   - set -o pipefail
-  - cat "$GOOGLE_SERVICES" > "$(pwd)/app/google- services.json"
+  - cat "$GOOGLE_SERVICES" > "$(pwd)/app/google-services.json"
 
 after_script:
   - rm "$(pwd)/app/google.services.json"
