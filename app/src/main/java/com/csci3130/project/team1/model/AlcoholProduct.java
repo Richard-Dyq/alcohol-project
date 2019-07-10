@@ -4,19 +4,20 @@
 package com.csci3130.project.team1.model;
 
 
-public class AlcoholDetail {
+public class AlcoholProduct {
     private String brand;
     private String alcoholAmount;
     private String description;
-    private String type;
+    private int type;
 
     /**
      * alcohol details constructor
      * @param brand
      * @param alcoholAmount
      * @param description
+     * @param type
      */
-    public AlcoholDetail(String brand, String alcoholAmount, String description, String type) {
+    public AlcoholProduct(String brand, String alcoholAmount, String description, int type) {
         this.brand = brand;
         this.alcoholAmount = alcoholAmount;
         this.description = description;
@@ -24,7 +25,7 @@ public class AlcoholDetail {
 
     }
 
-    public AlcoholDetail() {}
+    public AlcoholProduct() {}
 
     /**
      * get alcohol brand
@@ -46,11 +47,11 @@ public class AlcoholDetail {
         this.alcoholAmount = alcoholAmount;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 
