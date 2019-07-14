@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity{
     private Button cannanisRecordOrderByLevel;
     private Button cannanisRecordOrderByDate;
     private Button alcoholProduct;
+    private Button cannabisProduct;
 
 
     @Override
@@ -39,6 +40,7 @@ public class HomeActivity extends AppCompatActivity{
         setUpAlcoholRecordOrderByLevel();
         setUpAlcoholRecordOrderByDate();
         setUpAlcoholProductButton();
+        setUpCannabisProductButton();
     }
 
     private void setUpAlcoholProductButton(){
@@ -47,6 +49,17 @@ public class HomeActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, AlcoholProductListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpCannabisProductButton(){
+        cannabisProduct = this.findViewById(R.id.cannabis_product_button);
+        cannabisProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, CannabisProductListActivity.class);
                 startActivity(intent);
             }
         });
