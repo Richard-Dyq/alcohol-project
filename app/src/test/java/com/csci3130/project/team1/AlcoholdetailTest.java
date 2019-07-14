@@ -15,7 +15,7 @@ public class AlcoholdetailTest {
     @Test
     public void getAlcoholbrand_isCorrect() {
         AlcoholProduct product = new AlcoholProduct("Maotai", "50%vol", "Chinese famous liquor",0);
-        String BRAND = product.getBrand();
+        String BRAND = product.getTitle();
         assertTrue(BRAND.contains("Maotai"));
     }
 

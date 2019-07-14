@@ -55,6 +55,8 @@
                 android:value=".HomeActivity"/>
         </activity>
 
+        <activity android:name=".AlcoholProductListActivity" android:label="Alcohol Products">
+        </activity>
     </application>
 
 </manifest>

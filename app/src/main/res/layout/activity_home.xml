@@ -58,6 +58,14 @@
             tools:layout_editor_absoluteY="274dp" />
 
         <Button
+            android:id="@+id/alcohol_product_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcohol Product"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <Button
             android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
