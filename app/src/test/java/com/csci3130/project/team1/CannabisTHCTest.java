@@ -18,12 +18,12 @@ public class CannabisTHCTest {
 
     @Test
     public void getCannabisLevelRep_isCorrect() {
-        CannabisProduct cannabis = new CannabisProduct("a","b", 12);
+        CannabisProduct cannabis = new CannabisProduct("a",0, 12);
         double level = cannabis.getTHC();
         boolean flag = level > 0 & level < 100;
         assertTrue(flag);
 
-        cannabis = new CannabisProduct("a","b",121.2);
+        cannabis = new CannabisProduct("a",0,121.2);
         level = cannabis.getTHC();
         flag = level > 0 & level < 100;
         assertFalse(flag);
@@ -31,15 +31,8 @@ public class CannabisTHCTest {
 
     @Test
     public void getCannabisName_isCorrect() {
-        CannabisProduct product = new CannabisProduct("a","b",12);
+        CannabisProduct product = new CannabisProduct("a",0,12);
         String type = product.getName();
         assertTrue(type.equals("a"));
-    }
-
-    @Test
-    public void getCannabisBrand_isCorrect() {
-        CannabisProduct product = new CannabisProduct("a","b",12);
-//        String type = product.getBrandLiteral();
-//        assertTrue(type.equals("Indica"));
     }
 }

@@ -59,7 +59,10 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/>
         </activity>
-        <activity android:name=".CannabisProductListActivity" android:label="Cannabis Products"></activity>
+        <activity android:name=".CannabisProductListActivity" android:label="Cannabis Products">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity"/>
+        </activity>
     </application>
 
 </manifest>

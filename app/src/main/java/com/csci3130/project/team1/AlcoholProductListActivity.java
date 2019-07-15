@@ -72,6 +72,12 @@ public class AlcoholProductListActivity extends AppCompatActivity {
                 holder.type.setText("Type: " + model.getTypeLiteral());
                 holder.level.setText("Level: " + model.getLevel());
                 Picasso.get().load(model.getUrl()).into(holder.imageView);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        System.out.println("22");
+                    }
+                });
             }
 
             @Override

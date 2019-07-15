@@ -15,6 +15,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
@@ -34,8 +35,9 @@ public class CannabisProductListActivity extends AppCompatActivity {
         adapter = setUpAdapter(database);
         setUpRecyclerView(recyclerView,adapter);
 
-
     }
+
+
 
     //Connects our recycler view with the viewholder
     // and firestore adapter
@@ -65,9 +67,16 @@ public class CannabisProductListActivity extends AppCompatActivity {
             public void onBindViewHolder(final CannabisProductViewHolder holder, int position, final CannabisProduct model)
             {
                 holder.title.setText(model.getName());
-                holder.type.setText(model.getBrandLiteral());
+                holder.type.setText("Type:" + model.getBrandLiteral());
                 holder.THC.setText("Level: " + model.getTHC());
-
+                Picasso.get().load(model.getUrl()).into(holder.imageView);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        System.out.println("111111");
+                        System.out.println(model);
+                    }
+                });
             }
 
             @Override

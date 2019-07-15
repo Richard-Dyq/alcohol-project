@@ -5,7 +5,8 @@
     android:layout_height="90dp"
     android:orientation="horizontal"
     android:padding="5dp"
-    android:weightSum="10">
+    android:weightSum="10"
+    android:id="@+id/product_cell">
 
 
 
