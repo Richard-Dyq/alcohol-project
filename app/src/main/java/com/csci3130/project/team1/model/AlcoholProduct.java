@@ -4,7 +4,9 @@
 package com.csci3130.project.team1.model;
 
 
-public class AlcoholProduct {
+import java.io.Serializable;
+
+public class AlcoholProduct implements Serializable {
     private String name;
     private double level;
     private String url;

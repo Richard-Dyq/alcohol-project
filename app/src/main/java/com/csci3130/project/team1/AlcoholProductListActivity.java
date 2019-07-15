@@ -1,7 +1,9 @@
 package com.csci3130.project.team1;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,6 +21,7 @@ import com.google.firebase.firestore.Query;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -75,7 +78,9 @@ public class AlcoholProductListActivity extends AppCompatActivity {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        System.out.println("22");
+                        Intent intent = new Intent(AlcoholProductListActivity.this, AlcoholDetailActivity.class);
+                        intent.putExtra("product", model);
+                        startActivity(intent);
                     }
                 });
             }
