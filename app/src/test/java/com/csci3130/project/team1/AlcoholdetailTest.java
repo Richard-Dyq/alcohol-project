@@ -22,6 +22,7 @@ public class AlcoholdetailTest {
     @Test
     public void getAlcoholamount_isCorrect() {
         AlcoholProduct product = new AlcoholProduct("a",50,"fack_url",0,"des");
+
         double AlcoholAmount = product.getLevel();
         assertTrue(AlcoholAmount == 50);
     }

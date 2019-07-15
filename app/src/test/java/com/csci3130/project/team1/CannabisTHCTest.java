@@ -17,8 +17,8 @@ import static org.junit.Assert.*;
 public class CannabisTHCTest {
 
     @Test
-    public void getCannaisLevelRep_isCorrect() {
-        CannabisProduct cannabis = new CannabisProduct("a","b",1.2);
+    public void getCannabisLevelRep_isCorrect() {
+        CannabisProduct cannabis = new CannabisProduct("a","b", 12);
         double level = cannabis.getTHC();
         boolean flag = level > 0 & level < 100;
         assertTrue(flag);
@@ -27,5 +27,19 @@ public class CannabisTHCTest {
         level = cannabis.getTHC();
         flag = level > 0 & level < 100;
         assertFalse(flag);
+    }
+
+    @Test
+    public void getCannabisName_isCorrect() {
+        CannabisProduct product = new CannabisProduct("a","b",12);
+        String type = product.getName();
+        assertTrue(type.equals("a"));
+    }
+
+    @Test
+    public void getCannabisBrand_isCorrect() {
+        CannabisProduct product = new CannabisProduct("a","b",12);
+//        String type = product.getBrandLiteral();
+//        assertTrue(type.equals("Indica"));
     }
 }
