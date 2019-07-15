@@ -1,5 +1,6 @@
 package com.csci3130.project.team1;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,8 +16,11 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class AlcoholProductListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -53,7 +57,7 @@ public class AlcoholProductListActivity extends AppCompatActivity {
     //More info on this: https://github.com/firebase/FirebaseUI-Android/blob/master/firestore/README.md
     private FirestoreRecyclerAdapter setUpAdapter(FirebaseFirestore db)
     {
-        Query query = db.collection("test").orderBy("name").limit(50);
+        Query query = db.collection("Alcohol").orderBy("name").limit(50);
         FirestoreRecyclerOptions<AlcoholProduct> options = new FirestoreRecyclerOptions.Builder<AlcoholProduct>()
                 .setQuery(query,AlcoholProduct.class)
                 .build();
@@ -65,9 +69,9 @@ public class AlcoholProductListActivity extends AppCompatActivity {
             public void onBindViewHolder(final AlcoholProductViewHolder holder, int position, final AlcoholProduct model)
             {
                 holder.title.setText(model.getName());
-                holder.type.setText(model.getTypeLiteral());
+                holder.type.setText("Type: " + model.getTypeLiteral());
                 holder.level.setText("Level: " + model.getLevel());
-
+                Picasso.get().load(model.getUrl()).into(holder.imageView);
             }
 
             @Override
