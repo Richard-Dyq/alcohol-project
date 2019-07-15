@@ -2,20 +2,29 @@ package com.csci3130.project.team1.model;
 
 public class CannabisProduct {
     private String name;
-    private String brand;
+    private int brand;
     private double THC;
+    private String url;
 
-    public CannabisProduct(String name, String brand, double THC) {
+
+    public CannabisProduct() {
+    }
+
+    public CannabisProduct(String name, int brand, double THC) {
         this.name = name;
         this.brand = brand;
         this.THC = THC;
     }
 
+    /**
+     * Getter and Setter Methods
+     */
+
     public String getName() {
         return name;
     }
 
-    public String getBrand() {
+    public int getBrand() {
         return brand;
     }
 
@@ -23,15 +32,27 @@ public class CannabisProduct {
         return THC;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(int brand) {
         this.brand = brand;
+    }
+
+    public String getBrandLiteral(){
+        return CannabisType.getInstance().allTypes.get((int)brand);
     }
 
     public void setTHC(double THC) {
         this.THC = THC;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
